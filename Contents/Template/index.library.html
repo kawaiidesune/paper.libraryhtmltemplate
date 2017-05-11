@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="media-per-column" content="7" />
+    <meta name="columns-per-page" content="2" />
+    <script type="text/javascript">
+        if (!!navigator.userAgent.match(/iP*.*Mobile.*Safari/))
+            window.location.pathname = window.location.pathname.substr(0, window.location.pathname.lastIndexOf("/")) + "/iphone/index.html";
+    </script>
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <style type="text/css">
+        .coverimage {
+            width: auto !important;
+            height: auto !important;
+            max-width: 60px;
+            max-height: 60px;
+        }
+    </style>
+    <script src="animator.js" type="text/javascript"></script>
+    <script src="prototype.js" type="text/javascript"></script>
+    <script src="effects.js" type="text/javascript"></script>
+    <script src="dragdrop.js" type="text/javascript"></script>
+    <script src="library.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="header">
+	<div id="header_main">
+	    <div id="collection_info">
+	       <div id="user"><img src="$addressBookImage60" alt="" /></div>
+	       <div id="username">$fullName</div>
+	       <div id="stats">
+	           <div id="total">Collection Total:<br /><span style="font-weight: bold">$totalItems</span></div>
+    	       <div id="updated">Last Updated:<br /><span style="font-weight: bold">$publishDate</span></div>
+	       </div>
+	    </div>
+	</div>
+</div> <!-- End header -->
+    
+<div id="content_top"></div>
+
+<div id="wrapper_before"></div>
+<div id="wrapper">
+    <div id="content">
+        
+        <div class="navigation">
+            <div class="shelf">
+                <span class="label">Shelf:</span>$shelfNavigationPopup
+            </div>
+            <div class="crumbs">
+                $pageNavigation
+            </div>
+        </div> <!-- End navigation -->
+    
+        <hr />
+        
+        <div id="media">
+            <div id="zoom">
+                <div class="closebox" onclick="this.parentNode.style.visibility = 'hidden';"></div>
+                <a id="zoom_link" href="#"><img id="zoom_image" src="" alt="" style="max-width:260px; max-height:260px;" /></a>
+            </div>
+            <script type="text/javascript" charset="utf-8">
+                new Draggable('zoom', {});
+            </script>
+        
+            <table>
+                <tr>
+                    <td>
+                        <div class="medium" id="medium$uuidString">
+                            <div class="cover" onclick="showZoomedCover('$uuidString');">$coverImage256</div>
+                            <a href="$amazonURL" class="title">$title</a>
+                            <a href="$amazonAuthorURL" class="creator">$creatorsCompositeString &#160;</a>
+                            <div class="rating">$rating</div>
+                            <div class="buttons">
+                                <img src="images/moredetails-close.png" alt="More Details" class="details_button"  onclick="clickMediumDetailsButton(this);" />
+                            </div>
+                            <div class="description">
+                                <p>$primaryDescriptionString</p>
+                            </div> <!-- End description for $title -->
+                            <span class="asin">$asin</span>
+                        </div> <!-- End medium -->
+                    </td>
+                </tr>
+        </table>
+        </div> <!-- End media -->
+        <hr style="margin-top: 6pt" />
+
+        <div class="navigation">
+            <div class="crumbs">
+                $pageNavigation
+            </div>
+        </div> <!-- End navigation -->
+        
+    </div> <!-- End content -->
+</div> <!-- End wrapper -->
+<div id="wrapper_after"></div>
+
+<div id="footer">
+    <a href="http://www.delicious-monster.com">
+        <img src="images/monster.png" alt="" /> Made with Delicious Library
+    </a>
+    <p>$librarySearchString</p>
+</div> <!-- End footer -->
+    
+</body>
+</html>
